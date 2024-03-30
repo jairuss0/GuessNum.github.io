@@ -192,7 +192,7 @@ let elapsedTime = 0;
 let isRunning = false;
 
 var speedRunAudio = new Audio('Sounds/dream.mp3');
-var failedAudio = new Audio('failed.mp3');
+var failedAudio = new Audio('Sounds/failed.mp3');
 // functions for the player timer while playing or isnt game over
 function start() {
   if (!isRunning) {
