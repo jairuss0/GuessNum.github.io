@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Guess Number</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="https://kit.fontawesome.com/fbe184ea4b.js" crossorigin="anonymous"></script>
+    </head>
+    <!--oncontextmenu="return false;" onkeydown="KeyPress()"-->
+    <body>
+        <main class="gamebg">
+            <!--GAME MENU-->
+            <div class="menu-container">
+                <h1>Guess The Number (??)</h1>
+                <div class="menu-btn">
+                    <button type="button" id="start" onclick="StartGame()">Start</button>
+                </div>
+            </div>
+            <div class="gameplay-container">
+                <div class="game-over-modal animate__animated animate__bounceInDown animate_delay-2s">
+                    <div class="game-over-menu">
+                        <div class="game-over-msg">
+                            <span>YOU LASTED:</span>
+                            <span id="gameplay-time">00:00:00:00</span>
+                        </div>
+                        <div class="attempts">
+                            <span>NO. ATTEMPTS:</span>
+                            <span id="player-attempts"></span>
+                        </div>
+                        <div class="guess-scoreboard">
+                            <span>NO. GUESS POINTS:</span>
+                            <span id="player-points"></span>
+                        </div>
+                        <div class="btn-game-over">
+                            <button onclick="PlayAgain()">Play-Again</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="timer-before-str">
+                    <div class="boxTmr"></div>
+                </div>
+                <!--add the progress bar here-->
+                <div class="progress-loader">
+                    <div class="progress"></div>
+                    <div class="countdown"></div>
+                </div>
+    
+                <div class="gameContainer">
+                    <h1>GuessTheNumber<span class="qMark">?</span><span class="range">Between 1-50</span></h1>
+                    <div class="hint">
+                        <!--display the hint if randomNum is lower or higher-->
+                        <i class="fa-solid fa-arrow-right"></i> 
+                       <a class="bluff">HOVER TO SEE THE RANDOM NUMBER</a>
+                       <span class="random-num-clue"></span>
+                    </div>
+                    <div class="clue-message"></div>
+                        
+                    <input id="displayInput" readonly>
+                   
+                </div>
+               
+                <div class="buttons">
+                    <button class="btn" onclick="UserInput('1')">1</button>
+                    <button class="btn" onclick="UserInput('2')">2</button>
+                    <button class="btn" onclick="UserInput('3')">3</button>
+                    <button class="btn" onclick="UserInput('4')">4</button>
+                    <button class="btn" onclick="UserInput('5')">5</button>
+                    <button class="btn" onclick="UserInput('6')">6</button>
+                    <button class="btn" onclick="UserInput('7')">7</button>
+                    <button class="btn" onclick="UserInput('8')">8</button>
+                    <button class="btn" onclick="UserInput('9')">9</button>
+                    <button class="btn" onclick="UserInput('0')">0</button>
+                    <button class="btn" id="UserGuess" onclick="UserGuess()">Guess</button>
+                    <button class="btn" id="ClearGuess" onclick="ClearGuess()">Clear</button>
+                </div>
+            </div>
+        </main>
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
