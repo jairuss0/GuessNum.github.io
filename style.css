@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Honk&display=swap");
+* {
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+}
+
+body {
+  margin: 0;
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+  font-family: "Poppins";
+  box-sizing: border-box;
+}
+
+.gamebg.show-gameplay {
+  background-color: #0F0F0F;
+}
+.gamebg.show-gameplay .gameplay-container {
+  display: flex;
+}
+
+.gamebg {
+  min-height: 100vh;
+  transition: ease-in 0.5s;
+}
+.gamebg .menu-container.close-menu {
+  height: 0vh;
+}
+.gamebg .menu-container.close-menu .game-over-modal {
+  display: none;
+}
+.gamebg .menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+  height: 100vh;
+  transition: ease-out 0.2s;
+  overflow: hidden;
+}
+.gamebg .menu-container h1 {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 4em;
+  text-transform: capitalize;
+  color: #333333;
+}
+.gamebg .menu-container .menu-btn #start {
+  border: none;
+  background-color: #333333;
+  color: #ebedee;
+  padding: 0.5em 3em;
+  font-size: 1.2em;
+  cursor: pointer;
+  font-weight: bolder;
+  transition: ease-in 0.5s;
+}
+.gamebg .menu-container .menu-btn #start:hover {
+  background-color: #6ff886;
+  color: #333333;
+}
+.gamebg .gameplay-container {
+  display: none;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  transition: ease 0.5s;
+  gap: 1em;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  color: #fdfbfb;
+  position: relative;
+}
+.gamebg .gameplay-container .progress-loader {
+  border-radius: 1em;
+  width: 100%;
+  height: 1em;
+  border: solid 2px #333333;
+}
+.gamebg .gameplay-container .progress-loader .progress {
+  background-color: #f5ff85;
+  height: 1em;
+  border-radius: 1em;
+  transition: 0.1s;
+  width: 0%;
+}
+.gamebg .gameplay-container .progress-loader .countdown {
+  font-size: 1.5em;
+  color: #f5ff85;
+}
+.gamebg .gameplay-container .gameContainer h1 {
+  font-size: 3em;
+  font-weight: bolder;
+  font-family: "Pixelify Sans", sans-serif;
+}
+.gamebg .gameplay-container .gameContainer h1 .qMark {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 1.5em;
+}
+.gamebg .gameplay-container .gameContainer h1 .range {
+  color: #DC5F00;
+  font-size: 0.3em;
+  font-family: "Poppins";
+}
+.gamebg .gameplay-container .gameContainer input {
+  width: 70%;
+  padding: 0.5em;
+  font-size: 2em;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5em;
+  outline: none;
+}
+.gamebg .gameplay-container .gameContainer .hint {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+.gamebg .gameplay-container .gameContainer .hint a {
+  text-decoration: none;
+  font-size: 1.5em;
+  width: 340px;
+  height: 55px;
+  color: #ebedee;
+  font-family: "Pixelify Sans", sans-serif;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+.gamebg .gameplay-container .gameContainer .hint a:hover {
+  font-size: 2em;
+}
+.gamebg .gameplay-container .gameContainer .hint i {
+  font-size: 1.3em;
+  color: #DC5F00;
+}
+.gamebg .gameplay-container .gameContainer .hint span {
+  color: #6ff886;
+  font-size: 1.8em;
+  filter: blur(0.4rem);
+}
+.gamebg .gameplay-container .gameContainer .clue-message {
+  font-size: 1.5em;
+  align-items: center;
+  margin: 0.7em;
+}
+.gamebg .gameplay-container .gameContainer .CmessageIn {
+  animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.5s; /* don't forget to set a duration! */
+}
+.gamebg .gameplay-container .gameContainer .CmessageOut {
+  animation: fadeOutDown; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 0.5s; /* don't forget to set a duration! */
+}
+.gamebg .gameplay-container .buttons {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5em 0em;
+}
+.gamebg .gameplay-container .buttons button {
+  background-color: #242424;
+  color: #fdfbfb;
+  text-align: center;
+  border-radius: 1em;
+  height: 1.5em;
+  padding: 0em 1em;
+  font-size: 2em;
+  border: none;
+  margin: 0.2em 0.1em;
+}
+.gamebg .gameplay-container .buttons button:active {
+  background-color: #ebedee;
+  color: #0F0F0F;
+}
+.gamebg .gameplay-container .buttons #UserGuess {
+  border-radius: 0.5em;
+}
+.gamebg .gameplay-container .buttons #UserGuess:active {
+  background-color: #6ff886;
+  color: #0F0F0F;
+}
+.gamebg .gameplay-container .buttons #ClearGuess {
+  border-radius: 0.5em;
+}
+.gamebg .gameplay-container .buttons #ClearGuess:active {
+  background-color: #f5ff85;
+  color: #0F0F0F;
+}
+.gamebg .gameplay-container button:active, .gamebg .gameplay-container button.active {
+  background-color: #ebedee;
+  color: #0F0F0F;
+}
+.gamebg .gameplay-container .timer-before-str {
+  position: absolute;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: rgba(15, 15, 15, 0.6666666667);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gamebg .gameplay-container .timer-before-str .boxTmr {
+  font-size: 7em;
+  color: #fdfbfb;
+}
+.gamebg .gameplay-container .game-over-modal {
+  position: absolute;
+  margin: 0 auto;
+  z-index: 2;
+  max-width: 600px;
+  width: 100%;
+  background-color: rgba(15, 15, 15, 0.6666666667);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gamebg .gameplay-container .game-over-modal .game-over-menu {
+  background-color: #011522;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 1.5em;
+  padding: 1em;
+}
+.gamebg .gameplay-container .game-over-modal .game-over-menu .game-over-msg {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 1em;
+  margin: 1em;
+}
+.gamebg .gameplay-container .game-over-modal .game-over-menu .attempts {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 1em;
+  margin: 1em;
+}
+.gamebg .gameplay-container .game-over-modal .game-over-menu .guess-scoreboard {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 1em;
+  margin: 1em;
+  margin-bottom: 1.2em;
+}
+.gamebg .gameplay-container .game-over-modal .game-over-menu .btn-game-over button {
+  padding: 0.5em 1em;
+  border-radius: 0.3em;
+  font-size: 1.1em;
+  background-color: #ebedee;
+  color: #011522;
+  cursor: pointer;
+  border: none;
+  font-family: "Pixelify Sans", sans-serif;
+}
+.gamebg .gameplay-container .game-over-modal .game-over-menu .btn-game-over button:active {
+  background-color: #fdfbfb;
+}
+.gamebg .gameplay-container .game-over-modal.close-G-over {
+  display: none;
+}
+.gamebg .gameplay-container .game-over-modal.show-G-over {
+  display: flex;
+}
+
+@media (width <= 710px) {
+  .gamebg .menu-container h1 {
+    font-size: 2.5em;
+  }
+  .gamebg .menu-container .menu-btn #start {
+    font-size: 1em;
+    padding: 0.5em 3em;
+  }
+}
+@media (width <= 600px) {
+  .gamebg .menu-container h1 {
+    font-size: 1.8em;
+  }
+  .gamebg .menu-container .menu-btn #start {
+    font-size: 1em;
+    padding: 0.4em 2em;
+  }
+}
+@media (width <= 630px) {
+  .gamebg {
+    margin: 0 auto;
+  }
+  .gamebg .gameplay-container {
+    gap: 0.2em;
+  }
+  .gamebg .gameplay-container .game-over-modal .game-over-menu {
+    max-width: 300px;
+  }
+  .gamebg .gameplay-container .game-over-modal .game-over-menu .btn-game-over {
+    font-size: 0.9em;
+  }
+  .gamebg .gameplay-container .progress-loader {
+    width: 60%;
+    margin-top: 1em;
+  }
+  .gamebg .gameplay-container .gameContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0em;
+    width: 420px;
+  }
+  .gamebg .gameplay-container .gameContainer h1 {
+    font-size: 2.3em;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .gamebg .gameplay-container .gameContainer input {
+    font-size: 1.6em;
+  }
+  .gamebg .gameplay-container .gameContainer .hint {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 0.2em;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .gamebg .gameplay-container .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0em auto;
+    max-width: 400px;
+  }
+  .gamebg .gameplay-container .buttons button {
+    margin: 0.1em 0.1em;
+    padding: 0em 1em;
+    font-size: 1.5em;
+  }
+}
+@media (width <= 420px) {
+  .gamebg .gameplay-container {
+    gap: 0.2em;
+  }
+  .gamebg .gameplay-container .game-over-modal .game-over-menu {
+    max-width: 300px;
+  }
+  .gamebg .gameplay-container .game-over-modal .game-over-menu .btn-game-over {
+    font-size: 0.9em;
+  }
+  .gamebg .gameplay-container .progress-loader {
+    width: 60%;
+    margin-top: 1em;
+  }
+  .gamebg .gameplay-container .gameContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0em;
+    width: 420px;
+  }
+  .gamebg .gameplay-container .gameContainer h1 {
+    font-size: 1.8em;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  .gamebg .gameplay-container .gameContainer input {
+    font-size: 1.6em;
+    margin: 0.2em 1em;
+  }
+  .gamebg .gameplay-container .gameContainer .hint {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .gamebg .gameplay-container .gameContainer .hint a {
+    font-size: 1em;
+  }
+  .gamebg .gameplay-container .buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0 auto;
+    padding: 0.5em;
+  }
+  .gamebg .gameplay-container .buttons button {
+    margin: 0.1em 0.1em;
+    padding: 0em 0.2em;
+    font-size: 1.5em;
+  }
+}/*# sourceMappingURL=style.css.map */
