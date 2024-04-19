@@ -192,7 +192,7 @@ let elapsedTime = 0;
 let isRunning = false;
 
 var speedRunAudio = new Audio('Sounds/dream.mp3');
-var failedAudio = new Audio('Sounds/failed.mp3');
+var failedAudio = new Audio('/Sounds/failed.mp3.mp3');
 // functions for the player timer while playing or isnt game over
 function start() {
   if (!isRunning) {
@@ -276,13 +276,13 @@ document.onkeydown = function(e) {
     if(event.keyCode == 123) {
     return false;
     }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+    if(e.ctrlKey && e.shiftKey && e.key == 'I'.charCodeAt(0)){
     return false;
     }
-    if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+    if(e.ctrlKey && e.shiftKey && e.key == 'J'.charCodeAt(0)){
     return false;
     }
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+    if(e.ctrlKey && e.key == 'U'.charCodeAt(0)){
     return false;
     }
 }
@@ -292,9 +292,8 @@ document.onkeyup = function (e) {
   if (e.key == "Backspace") {
     display.value = display.value.slice(0, -1);
   } else {
-    //numkeys1 = [49,50,51,52,53,54,55,56,57,58,59];
+   
     numkeys1 = [0,1, 2, 3, 4, 5, 6, 7, 8, 9];
-    //numkeys2 = [97,98,99,100,101,102,103,104,105];
     for (i = 0; i < numkeys1.length; i++) {
       if (e.key == numkeys1[i]) {
         display.value += i;

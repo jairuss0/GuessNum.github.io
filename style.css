@@ -143,7 +143,7 @@ body {
 .gamebg .gameplay-container .gameContainer .hint span {
   color: #6ff886;
   font-size: 1.8em;
-  filter: blur(0.4rem);
+  filter: blur(4.4px);
 }
 .gamebg .gameplay-container .gameContainer .clue-message {
   font-size: 1.5em;
